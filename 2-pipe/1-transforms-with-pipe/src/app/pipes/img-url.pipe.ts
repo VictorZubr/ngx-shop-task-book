@@ -7,6 +7,6 @@ import { IProductImage } from '../../../../../shared/mocks/2-pipes/product';
 // @ts-ignore
 export class ImgUrlPipe implements PipeTransform {
 	public transform(_images: IProductImage[] | undefined): string {
-		return '';
+		return _images ? (_images[0] as IProductImage).url : '';
 	}
 }
