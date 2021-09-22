@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 // @ts-ignore
 export class RatePipe implements PipeTransform {
-	public transform(value: number): number | undefined {
+	public transform(value: number): number {
 		let newValue: number = value;
 		if (newValue - Math.trunc(newValue) < 0.25) {
 			newValue = Math.trunc(value);
