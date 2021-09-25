@@ -1,10 +1,11 @@
-<div class="list-group-item pointer">
-  <h5 class="mb-0 category-name">
+<div class="list-group-item pointer" *ngFor="let category of categories; index as i" (click)="showSubCategories(i)">
+  <h5 class="mb-0 category-name">{{category.name}}
     <img loading="auto" src="assets/icons/icon-angle.svg" alt="angle-right" />
   </h5>
-  <ul class="collapse pointer" data-parent="#accordion">
-    <li class="sub-category">
-      <a class="sub-category-name"> </a>
+  <ul class="pointer" [ngClass]="{collapse: currentIndex !== i}" data-parent="#accordion">
+    <li (click)="selectSubCategory(item._id)" *ngFor="let item of category.subCategories"
+        [ngClass]="{selected: currentCategory === item._id}" class="sub-category">
+      <a class="sub-category-name" >{{item.name}}</a>
     </li>
   </ul>
 </div>

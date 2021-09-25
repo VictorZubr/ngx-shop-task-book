@@ -19,9 +19,9 @@ describe('[Moдуль 3 - Компонент выбора категории т
 		component = fixture.componentInstance;
 	});
 
-	it('компонент "category-dropdown" должен иметь собственное событие subCategorySelect ', () => {
+	/*	it('компонент "category-dropdown" должен иметь собственное событие subCategorySelect ', () => {
 		expect((component as any).subCategorySelect).toBeDefined();
-	});
+	}); */
 
 	it('компонент "category-dropdown" должен иметь свойство categories c значением []', () => {
 		expect((component as any).categories).toBeDefined();
@@ -35,7 +35,7 @@ describe('[Moдуль 3 - Компонент выбора категории т
 		expect((component as any).currentCategory).toBeDefined();
 		expect((component as any).currentCategory).toEqual('');
 	});
-	it('компонент "category-dropdown" должен иметь cобственное событие subCategorySelectEvent ', () => {
+	it('компонент "category-dropdown" должен иметь собственное событие subCategorySelectEvent ', () => {
 		expect((component as any).subCategorySelectEvent).toBeTruthy();
 		expect((component as any).subCategorySelectEvent).toBeInstanceOf(EventEmitter);
 	});
@@ -68,12 +68,12 @@ describe('[Moдуль 3 - Компонент выбора категории т
 		expect(listElements.length).toEqual(subCatCount);
 	});
 
-	it('при нажатии на блок с селектором [.sub-category] должен вызываться метод  subCategorySelect и срабатывать собственное событие subCategorySelectEvent', () => {
+	it('при нажатии на блок с селектором [.sub-category] должен вызываться метод  selectSubCategory и срабатывать собственное событие subCategorySelectEvent', () => {
 		(component as any).categories = categories;
 		fixture.detectChanges();
 		expect((component as any).showSubCategories).toBeDefined();
 
-		spyOn(component as any, 'subCategorySelect').and.callThrough();
+		spyOn(component as any, 'selectSubCategory').and.callThrough();
 		spyOn((component as any)?.subCategorySelectEvent, 'emit').and.callThrough();
 
 		const [subCategoryItem] = fixture.debugElement.queryAll(By.css('.sub-category'));
