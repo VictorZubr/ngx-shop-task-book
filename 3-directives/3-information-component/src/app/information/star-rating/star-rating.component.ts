@@ -9,11 +9,12 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 export class StarRatingComponent {
 	@Input()
 	//  @ts-ignore
-	public feedbackRate = 0;
+	public feedbackRate: number | undefined;
 
 	public stars = [0, 1, 2, 3, 4];
 
 	public highlight(index: number): boolean {
-		return index + 1 <= Math.round(this.feedbackRate);
+		// console.log('# highlight', index, this.feedbackRate, index + 1 <= Math.round(this.feedbackRate as number))
+		return index + 1 <= Math.round(this.feedbackRate as number);
 	}
 }
