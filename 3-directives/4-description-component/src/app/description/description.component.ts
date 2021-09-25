@@ -7,7 +7,7 @@ import { IProduct } from '../../../../../shared/mocks/3-directives/product-infor
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DescriptionComponent {
-	@Input() public product: IProduct = {} as IProduct;
+	@Input() public product: IProduct | null = null;
 
 	public isShowDescription = true;
 
