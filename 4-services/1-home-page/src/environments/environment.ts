@@ -5,7 +5,7 @@
 export const environment = {
 	production: false,
 	author: 'jsdaddy.io',
-	baseUrl: 'https://course-angular.javascript.ru/',
+	baseUrl: 'https://course-angular.javascript.ru/api',
 };
 /*
  * For easier debugging in development mode, you can import the following file

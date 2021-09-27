@@ -1,4 +1,5 @@
 import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
+import { IProduct } from '../../../../../../shared/mocks/4-services/products';
 
 @Component({
 	selector: 'ngx-shop-product-card',

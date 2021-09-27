@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { InterceptorService } from './services/interceptor/interceptor.service';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { HeaderComponent } from './home-page/header/header.component';
@@ -12,6 +11,7 @@ import { ProductsService } from './services/products/products.service';
 import { BASE_URL_TOKEN } from './services/interceptor/config';
 import { environment } from '../environments/environment';
 import { CategoriesService } from './services/categories/category.service';
+import { InterceptorService } from './services/interceptor/interceptor.service';
 
 @NgModule({
 	declarations: [

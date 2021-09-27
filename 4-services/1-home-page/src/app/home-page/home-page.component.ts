@@ -1,4 +1,6 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { IProduct } from '../../../../../shared/mocks/4-services/products';
+import { ICategory } from '../../../../../shared/mocks/4-services/categories';
 
 @Component({
 	selector: 'ngx-shop-home-page',
@@ -6,5 +8,20 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 	styleUrls: ['./home-page.component.sass'],
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
-// @ts-ignore
-export class HomePageComponent {}
+export class HomePageComponent {
+	@Input()
+	public products: IProduct[] = [];
+
+	@Input()
+	public categories: ICategory[] = [];
+
+	public goToBasket() {
+		console.log('Go to basket');
+	}
+
+	public goToProduct() {}
+
+	public redirectTo(id: string) {
+		console.log(id);
+	}
+}
